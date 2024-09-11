@@ -1,0 +1,15 @@
+<li class="list-group-item">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag line_item.product.image_url, class: "img-fluid" if line_item.product.image_url.present? %>
+    </div>
+    <div class="col-md-6">
+      <h5><%= line_item.product.name %></h5>
+      <p><%= line_item.product.description %></p>
+    </div>
+    <div class="col-md-3">
+      <p>Quantity: <%= line_item.quantity %></p>
+      <p>Line Item Total: <%= number_to_currency(line_item.total_price) %></p>
+    </div>
+  </div>
+</li>

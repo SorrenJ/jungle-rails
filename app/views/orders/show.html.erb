@@ -8,6 +8,23 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <p>Email: <%= @order.email %></p>
+
+  <div class="line-items">
+<% if @order.line_items.present? %>
+<% @order.line_items.each do |line_item| %>
+<%= render 'line_item', line_item: line_item %>
+<% end %>
+
+  
+<% else %>
+<p>No line items found for this order.</p>
+
+   <% end %>
+</div>
+  
+  <p>Total Amount: <%= number_to_currency(@order.total_cents) %></p>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
