@@ -3,9 +3,9 @@ describe('Home Page', () => {
         cy.visit("/");
       });
       
-    it("There is 2 products on the page", () => {
+    it("There is 12 products on the page", () => {
       cy.visit("/");
-      cy.get(".products article").should("have.length", 2);
+      cy.get(".products article").should("have.length", 12);
     });
   });
   
