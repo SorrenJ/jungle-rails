@@ -81,9 +81,16 @@ Then run Cypress with Xvfb:
 
 `xvfb-run cypress open`
 
+If that doesn't work you can try openning up the virtual display using this:
+
+`bin/rails cypress:open`
 
 ### Ensure $DISPLAY is Set:
 
 If you're on a system with a GUI but $DISPLAY is not set, you can manually set it. Try this:
 
 `export DISPLAY=:0`
+
+### Final notes
+
+Make sure you change your 'baseUrl' to your respective localhost server in the 'cypress.config.js' file before running cypress
