@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-3">
       <p>Quantity: <%= line_item.quantity %></p>
-      <p>Line Item Total: <%= number_to_currency(line_item.total_price) %></p>
+      <p>Line Item Total: <%= number_to_currency(line_item.total_price, unit: "$", precision: 2) %></p>
     </div>
   </div>
 </li>
