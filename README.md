@@ -29,3 +29,61 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Cypress
+
+### Install Cypress
+
+Install the cypress npm package locally:
+
+`npm install cypress -v 12.17.4 --save-dev`
+
+### Install gems
+
+Add and install the appropriate gems in the appropriate section:
+
+`` 
+group :development, :test do
+  gem "cypress-rails"
+  gem 'database_cleaner-active_record'
+end
+
+``
+
+`bundle install`
+
+### Initialize Cypress
+
+Installing Cypress and its Rails gem is not enough to start working with it. We will need to initialize it first.
+
+In your terminal, run:
+
+`$ bin/rails cypress:init`
+
+Once run, we will have a cypress.config.js file at the root of the project.
+
+### Setup for WSL in headless mode
+
+You can run Cypress in headless mode by using the --headless flag with the cypress run command. This flag instructs Cypress to run the tests without launching the GUI.
+
+`cypress run --headless`
+
+
+### Set Up a Virtual Display (Linux)
+
+If you need the GUI (for example, if you're running Cypress with cypress open), you can set up a virtual display using Xvfb (X Virtual Framebuffer).
+
+Install Xvfb:
+
+`sudo apt-get install xvfb`
+
+Then run Cypress with Xvfb:
+
+`xvfb-run cypress open`
+
+
+### Ensure $DISPLAY is Set:
+
+If you're on a system with a GUI but $DISPLAY is not set, you can manually set it. Try this:
+
+`export DISPLAY=:0`
