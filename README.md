@@ -29,8 +29,33 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+- Cypress (for testing only)
 
-## Cypress
+## RSpec Unit Testing
+
+Install the new dependency for your project:
+
+`bundle install`
+
+With Rspec installed, run it's one-time generator (as per their instructions):
+
+`bin/rails generate rspec:install`
+
+Generate the binstub so you can run bin/rspec instead of bundle exec rspec from within the project directory:
+
+`bundle binstubs rspec-core`
+
+Let's create the test pg database. Your development and test databases are separate so that you can run your tests in isolation and neither one affects the other.
+
+`bin/rake db:setup RAILS_ENV=test`
+
+### Running all tests
+
+The following command is what you will use going forward to test:
+
+`bin/rspec`
+
+## Cypress End to End Testing
 
 ### Install Cypress
 
