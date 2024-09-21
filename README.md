@@ -42,13 +42,13 @@ Install the cypress npm package locally:
 
 Add and install the appropriate gems in the appropriate section:
 
-`` 
+``` js
 group :development, :test do
   gem "cypress-rails"
   gem 'database_cleaner-active_record'
 end
 
-``
+```
 
 `bundle install`
 
